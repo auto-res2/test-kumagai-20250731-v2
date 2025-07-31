@@ -103,5 +103,7 @@
       }
     ]
   ],
-  "process_index": 1
+  "process_index": 1,
+  "base_experimental_code": "```python\ndef gelu(x):\n    return 0.5 * x * (1 + T.tanh(T.sqrt(2 / np.pi) * (x + 0.044715 * T.pow(x, 3))))\n```\n\nThis code snippet defines the GELU activation function, which is a core component of the method. It uses the Theano library for tensor operations.",
+  "base_experimental_info": "The experimental setup involves training and evaluating models with GELU activations on image classification tasks (MNIST, CIFAR-10, CIFAR-100) and NLP tasks (language modeling). The code uses stochastic gradient descent with restarts (SGDR) for optimization. Key hyperparameters include learning rate, weight decay, dropout rate, and the number of residual blocks in the Wide Residual Networks (WRNs)."
 }
