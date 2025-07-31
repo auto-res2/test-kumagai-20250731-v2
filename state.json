@@ -9,17 +9,58 @@
   },
   "github_actions_execution": {
     "workflow_run_id": 16650616038,
-    "status": "in_progress",
+    "status": "completed",
     "started_at": "2025-07-31T13:39:29Z",
+    "completed_at": "2025-07-31T13:50:41Z",
     "job_id": 47122051469,
     "experiment_files": [
       "src/experiments/autogelu_experiments.py",
       "src/experiments/quick_test.py"
     ],
     "workflow_url": "https://github.com/auto-res2/test-kumagai-20250731-v2/actions/runs/16650616038",
-    "notes": "Experiments are running. The workflow includes 3 experiments: activation comparison, parameter evolution, and gradient flow analysis. Each experiment runs with reduced epochs in test mode."
+    "notes": "Experiments completed successfully. All 3 experiments ran in test mode with reduced epochs."
   },
-  "executed_flag": false,
-  "execution_outputs": {},
+  "executed_flag": true,
+  "execution_outputs": {
+    "experiment1_results": {
+      "final_accuracies": {
+        "ReLU": 42.82,
+        "GELU": 57.19,
+        "Swish": 52.44,
+        "AutoGELU": 25.22
+      },
+      "plot": "experiment1_activation_comparison.pdf"
+    },
+    "experiment2_results": {
+      "parameter_evolution": {
+        "alpha": {
+          "initial": 1.0,
+          "final": 0.7168,
+          "change": -0.2832
+        },
+        "beta": {
+          "initial": 0.0447,
+          "final": 0.5358,
+          "change": 0.4911
+        }
+      },
+      "final_accuracy": 61.93,
+      "plot": "experiment2_parameter_evolution.pdf"
+    },
+    "experiment3_results": {
+      "gradient_flow": {
+        "GELU_mean_grad_norm": 0.001197,
+        "AutoGELU_mean_grad_norm": 0.001195,
+        "ratio": 0.9983
+      },
+      "plot": "experiment3_gradient_flow.pdf"
+    },
+    "generated_files": [
+      "experiment1_activation_comparison.pdf",
+      "experiment2_parameter_evolution.pdf",
+      "experiment3_gradient_flow.pdf",
+      "quick_test_plot.pdf"
+    ]
+  },
   "error_logs": []
 }
