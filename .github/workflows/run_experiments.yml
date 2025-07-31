@@ -38,7 +38,7 @@ jobs:
         ls -la results/
     
     - name: Upload experiment results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: experiment-results
         path: |
@@ -47,7 +47,7 @@ jobs:
       if: always()
     
     - name: Upload experiment plots
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: experiment-plots
         path: src/experiments/*.pdf
