@@ -1,0 +1,25 @@
+{
+  "github_repository": "auto-res2/test-kumagai-20250731-v2",
+  "branch_name": "test",
+  "experiment_iteration": 0,
+  "push_completion": {
+    "status": "completed",
+    "timestamp": "2025-07-31T13:39:29Z",
+    "commit_sha": "23bc94c"
+  },
+  "github_actions_execution": {
+    "workflow_run_id": 16650616038,
+    "status": "in_progress",
+    "started_at": "2025-07-31T13:39:29Z",
+    "job_id": 47122051469,
+    "experiment_files": [
+      "src/experiments/autogelu_experiments.py",
+      "src/experiments/quick_test.py"
+    ],
+    "workflow_url": "https://github.com/auto-res2/test-kumagai-20250731-v2/actions/runs/16650616038",
+    "notes": "Experiments are running. The workflow includes 3 experiments: activation comparison, parameter evolution, and gradient flow analysis. Each experiment runs with reduced epochs in test mode."
+  },
+  "executed_flag": false,
+  "execution_outputs": {},
+  "error_logs": []
+}
