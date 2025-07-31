@@ -1,0 +1,47 @@
+{
+  "base_queries": "Novel approaches to activation functions in neural networks",
+  "base_method_text": {
+    "arxiv_id": "1606.08415",
+    "arxiv_url": "https://arxiv.org/abs/1606.08415",
+    "title": "Gaussian Error Linear Units (GELUs)",
+    "authors": [
+      "Dan Hendrycks",
+      "Kevin Gimpel"
+    ],
+    "published_date": "2016-06-27",
+    "journal": "arXiv preprint",
+    "doi": "",
+    "summary": "We propose the Gaussian Error Linear Unit (GELU), a high-performing neural network activation function. The GELU activation function is xΦ(x), where Φ(x) the standard Gaussian cumulative distribution function. The GELU nonlinearity weights inputs by their value, rather than gates inputs by their sign as in ReLUs.",
+    "github_url": "https://github.com/hendrycks/GELUs",
+    "main_contributions": "Introduction of GELU activation function that outperforms ReLU and ELU on various tasks.",
+    "methodology": "The GELU is defined as GELU(x) = x * Φ(x) where Φ(x) is the cumulative distribution function of the standard normal distribution. This can be approximated as: GELU(x) ≈ 0.5x(1 + tanh[√(2/π)(x + 0.044715x³)]).",
+    "experimental_setup": "Evaluated on MNIST, CIFAR-10, CIFAR-100 image classification tasks and NLP tasks including language modeling.",
+    "limitations": "Computational cost slightly higher than ReLU due to the need to compute the Gaussian CDF.",
+    "future_research_directions": "Exploring other probabilistic activation functions and their properties."
+  },
+  "base_github_url": "https://github.com/hendrycks/GELUs",
+  "scraped_papers": [
+    {
+      "arxiv_id": "1606.08415",
+      "arxiv_url": "https://arxiv.org/abs/1606.08415",
+      "title": "Gaussian Error Linear Units (GELUs)",
+      "authors": [
+        "Dan Hendrycks",
+        "Kevin Gimpel"
+      ],
+      "published_date": "2016-06-27",
+      "journal": "arXiv preprint",
+      "doi": "",
+      "summary": "We propose the Gaussian Error Linear Unit (GELU), a high-performing neural network activation function. The GELU activation function is xΦ(x), where Φ(x) the standard Gaussian cumulative distribution function. The GELU nonlinearity weights inputs by their value, rather than gates inputs by their sign as in ReLUs.",
+      "github_url": "https://github.com/hendrycks/GELUs",
+      "main_contributions": "Introduction of GELU activation function that outperforms ReLU and ELU on various tasks.",
+      "methodology": "The GELU is defined as GELU(x) = x * Φ(x) where Φ(x) is the cumulative distribution function of the standard normal distribution. This can be approximated as: GELU(x) ≈ 0.5x(1 + tanh[√(2/π)(x + 0.044715x³)]).",
+      "experimental_setup": "Evaluated on MNIST, CIFAR-10, CIFAR-100 image classification tasks and NLP tasks including language modeling.",
+      "limitations": "Computational cost slightly higher than ReLU due to the need to compute the Gaussian CDF.",
+      "future_research_directions": "Exploring other probabilistic activation functions and their properties."
+    }
+  ],
+  "base_paper_selected": true,
+  "mock_data_used": true,
+  "timestamp": "2025-07-31T21:25:10.680747"
+}
