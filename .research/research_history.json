@@ -43,5 +43,65 @@
   ],
   "base_paper_selected": true,
   "mock_data_used": true,
-  "timestamp": "2025-07-31T21:25:10.680747"
+  "timestamp": "2025-07-31T21:36:24.067714",
+  "add_queries": [
+    "Swish activation function neural networks",
+    "smooth activation functions deep learning",
+    "automated neural architecture search activation"
+  ],
+  "add_method_texts": [
+    {
+      "arxiv_id": "1710.05941",
+      "arxiv_url": "https://arxiv.org/abs/1710.05941",
+      "title": "Searching for Activation Functions",
+      "authors": [
+        "Prajit Ramachandran",
+        "Barret Zoph",
+        "Quoc V. Le"
+      ],
+      "published_date": "2017-10-16",
+      "journal": "arXiv preprint",
+      "doi": "",
+      "summary": "In this work, we propose the use of automated search techniques to discover novel activation functions. Using a combination of exhaustive and reinforcement learning-based search, we discover several novel activation functions. The best discovered activation function, which we call Swish, is f(x) = x · sigmoid(βx).",
+      "github_url": "https://github.com/tensorflow/models/tree/master/research/autoaugment",
+      "main_contributions": "Discovery of Swish activation function through automated search, outperforming ReLU on many tasks.",
+      "methodology": "The Swish activation is defined as f(x) = x · sigmoid(βx) where β is either a constant or trainable parameter. This smooth, non-monotonic function provides better gradient flow than ReLU.",
+      "experimental_setup": "Evaluated on ImageNet, CIFAR-10, CIFAR-100, machine translation, and language modeling tasks.",
+      "limitations": "Slightly more computationally expensive than ReLU due to sigmoid computation.",
+      "future_research_directions": "Exploring automated search for other neural network components beyond activation functions."
+    }
+  ],
+  "add_github_urls": [
+    "https://github.com/tensorflow/models/tree/master/research/autoaugment"
+  ],
+  "generated_queries": [
+    "smooth non-monotonic activation functions",
+    "learnable activation function parameters",
+    "gradient flow improvement activation functions"
+  ],
+  "candidate_add_papers_info_list": [
+    [
+      {
+        "arxiv_id": "1710.05941",
+        "arxiv_url": "https://arxiv.org/abs/1710.05941",
+        "title": "Searching for Activation Functions",
+        "authors": [
+          "Prajit Ramachandran",
+          "Barret Zoph",
+          "Quoc V. Le"
+        ],
+        "published_date": "2017-10-16",
+        "journal": "arXiv preprint",
+        "doi": "",
+        "summary": "In this work, we propose the use of automated search techniques to discover novel activation functions. Using a combination of exhaustive and reinforcement learning-based search, we discover several novel activation functions. The best discovered activation function, which we call Swish, is f(x) = x · sigmoid(βx).",
+        "github_url": "https://github.com/tensorflow/models/tree/master/research/autoaugment",
+        "main_contributions": "Discovery of Swish activation function through automated search, outperforming ReLU on many tasks.",
+        "methodology": "The Swish activation is defined as f(x) = x · sigmoid(βx) where β is either a constant or trainable parameter. This smooth, non-monotonic function provides better gradient flow than ReLU.",
+        "experimental_setup": "Evaluated on ImageNet, CIFAR-10, CIFAR-100, machine translation, and language modeling tasks.",
+        "limitations": "Slightly more computationally expensive than ReLU due to sigmoid computation.",
+        "future_research_directions": "Exploring automated search for other neural network components beyond activation functions."
+      }
+    ]
+  ],
+  "process_index": 1
 }
