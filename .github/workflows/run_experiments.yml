@@ -25,9 +25,16 @@ jobs:
     - name: Create results directory
       run: mkdir -p results
     
-    - name: Run experiments
+    - name: Run quick test
       run: |
         cd src/experiments
+        python quick_test.py
+    
+    - name: Run experiments
+      timeout-minutes: 15
+      run: |
+        cd src/experiments
+        # Run in test mode with reduced epochs for faster completion
         python autogelu_experiments.py > ../../results/experiment_output.txt 2>&1
     
     - name: List generated files
