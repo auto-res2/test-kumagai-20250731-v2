@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRAS Research Results</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .research-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .research-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .research-card h2 {
+            color: #0366d6;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        .research-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .links a {
+            background: #0366d6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .links a:hover {
+            background: #0256c7;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            display: inline-block;
+        }
+        .status.running {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status.completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔬 AIRAS Automated Research Results</h1>
+    
+    <div class="research-grid">
+        <div class="research-card">
+            <h2>Quantum-Inspired Neural Network Optimization</h2>
+            <p>Research on quantum-inspired algorithms for optimizing neural network training, featuring novel quantum annealing techniques and entanglement-inspired parameter updates.</p>
+            <div class="links">
+                <a href="https://github.com/auto-res2/test-kumagai-20250731-v2/tree/test-2">View Code</a>
+                <a href="test-2/paper.html">Read Paper</a>
+                <a href="test-2/results/">View Results</a>
+            </div>
+            <div class="status running" id="status-test-2">⏳ Running...</div>
+        </div>
+        
+        <div class="research-card">
+            <h2>Federated Learning with Differential Privacy</h2>
+            <p>Implementation of privacy-preserving federated learning for healthcare applications, incorporating advanced differential privacy mechanisms and secure aggregation protocols.</p>
+            <div class="links">
+                <a href="https://github.com/auto-res2/test-kumagai-20250731-v2/tree/test-3">View Code</a>
+                <a href="test-3/paper.html">Read Paper</a>
+                <a href="test-3/results/">View Results</a>
+            </div>
+            <div class="status running" id="status-test-3">⏳ Running...</div>
+        </div>
+        
+        <div class="research-card">
+            <h2>Graph Neural Networks for Protein Interactions</h2>
+            <p>Advanced GNN architectures for predicting protein-protein interactions, utilizing multi-head attention mechanisms and molecular structure embeddings.</p>
+            <div class="links">
+                <a href="https://github.com/auto-res2/test-kumagai-20250731-v2/tree/test-4">View Code</a>
+                <a href="test-4/paper.html">Read Paper</a>
+                <a href="test-4/results/">View Results</a>
+            </div>
+            <div class="status running" id="status-test-4">⏳ Running...</div>
+        </div>
+    </div>
+    
+    <div class="last-updated">
+        Last updated: <span id="last-updated"></span>
+    </div>
+    
+    <script>
+        // Update last updated time
+        document.getElementById('last-updated').textContent = new Date().toLocaleString();
+        
+        // Check workflow status (this would normally poll an API)
+        // For now, we'll simulate checking status
+        function checkStatus() {
+            // This would normally make API calls to check GitHub Actions status
+            // For demonstration, we'll just show as running
+            console.log('Checking workflow status...');
+        }
+        
+        // Check status every 30 seconds
+        setInterval(checkStatus, 30000);
+        checkStatus();
+    </script>
+</body>
+</html>
