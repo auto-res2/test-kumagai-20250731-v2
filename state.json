@@ -7,5 +7,14 @@
   "skip_latex": true,
   "experiment_code_created": true,
   "experiment_file": "gnn_protein_experiments.py",
-  "workflow_status": "in_progress"
+  "workflow_status": "completed",
+  "workflow_end_time": "2025-08-01T16:28:41.841160",
+  "airas_steps_completed": [
+    "prepare_repository",
+    "create_code",
+    "github_actions_executor",
+    "analytic",
+    "writer",
+    "html"
+  ]
 }
