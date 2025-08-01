@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auto-res2.github.io/test-kumagai-20250731-v2/sitemap.xml

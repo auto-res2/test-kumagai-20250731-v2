@@ -1,0 +1,106 @@
+/* AutoGELU Paper Stylesheet */
+
+/* Print styles */
+@media print {
+    body {
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+    
+    .toc, .downloads, header {
+        display: none;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: none;
+    }
+    
+    h2 {
+        page-break-after: avoid;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #3b82f6;
+        --secondary-color: #60a5fa;
+        --accent-color: #fb923c;
+        --bg-color: #111827;
+        --text-color: #e5e7eb;
+        --light-gray: #374151;
+        --code-bg: #1f2937;
+    }
+    
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    .section {
+        background-color: #1f2937;
+    }
+    
+    .abstract {
+        background-color: #1e3a8a;
+    }
+    
+    .key-findings {
+        background-color: #064e3b;
+        border-color: #059669;
+    }
+    
+    .code-block {
+        background-color: #111827;
+        border: 1px solid #374151;
+    }
+}
+
+/* Responsive typography */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+    
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Animation for citations */
+.citation {
+    transition: all 0.3s ease;
+}
+
+.citation:hover {
+    transform: translateY(-2px);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Code syntax highlighting */
+.code-block .keyword {
+    color: #c678dd;
+}
+
+.code-block .string {
+    color: #98c379;
+}
+
+.code-block .comment {
+    color: #5c6370;
+    font-style: italic;
+}
+
+.code-block .function {
+    color: #61afef;
+}
+
+.code-block .number {
+    color: #d19a66;
+}

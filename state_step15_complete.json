@@ -1,0 +1,70 @@
+{
+  "step_15_html_subgraph": {
+    "status": "completed",
+    "timestamp": "2025-07-31T23:45:00Z",
+    "github_repository": "auto-res2/test-kumagai-20250731-v2",
+    "branch_name": "test",
+    "html_generated": true,
+    "html_features": {
+      "responsive_design": true,
+      "mathjax_formulas": true,
+      "interactive_citations": true,
+      "dark_mode_support": true,
+      "print_styles": true,
+      "seo_optimized": true,
+      "table_of_contents": true,
+      "figure_display": true
+    },
+    "files_created": [
+      "docs/index.html",
+      "docs/_config.yml",
+      "docs/style.css",
+      "docs/Gemfile",
+      "docs/robots.txt",
+      "docs/experiment1_activation_comparison.pdf",
+      "docs/experiment2_parameter_evolution.pdf",
+      "docs/experiment3_gradient_flow.pdf"
+    ],
+    "html_sections": [
+      "Abstract",
+      "Introduction",
+      "Related Work",
+      "Background",
+      "Method",
+      "Experimental Setup",
+      "Results with interactive tables and figures",
+      "Conclusions",
+      "References with clickable citations",
+      "Download links"
+    ],
+    "github_pages_ready": true,
+    "url": "https://auto-res2.github.io/test-kumagai-20250731-v2/",
+    "note": "Manual execution completed successfully. HTML version includes all paper content with enhanced styling, interactive elements, and GitHub Pages configuration. MCP tools were not available, so GitHub upload was performed manually."
+  },
+  "workflow_complete": true,
+  "all_steps_executed": [
+    "prepare_repository_subgraph",
+    "retrieve_paper_from_query_subgraph",
+    "retrieve_related_paper_subgraph",
+    "retrieve_code_subgraph",
+    "create_method_subgraph",
+    "create_experimental_design_subgraph",
+    "create_code_subgraph",
+    "github_actions_executor_subgraph",
+    "fix_code_subgraph",
+    "analytic_subgraph",
+    "writer_subgraph",
+    "citation_subgraph",
+    "latex_subgraph",
+    "readme_subgraph",
+    "html_subgraph"
+  ],
+  "final_deliverables": {
+    "paper_pdf": "latex_output/paper.pdf",
+    "paper_markdown": "paper_with_citations.md",
+    "paper_html": "docs/index.html",
+    "code_repository": "https://github.com/auto-res2/test-kumagai-20250731-v2",
+    "github_pages": "https://auto-res2.github.io/test-kumagai-20250731-v2/",
+    "readme": "README.md"
+  }
+}

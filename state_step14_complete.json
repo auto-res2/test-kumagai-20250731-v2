@@ -1,0 +1,45 @@
+{
+  "step_14_readme_subgraph": {
+    "status": "completed",
+    "timestamp": "2025-07-31T23:35:00Z",
+    "github_repository": "auto-res2/test-kumagai-20250731-v2",
+    "branch_name": "test",
+    "readme_created": true,
+    "readme_sections": [
+      "Overview with key features",
+      "Abstract from paper",
+      "Mathematical definition of AutoGELU",
+      "Repository structure",
+      "Installation instructions",
+      "Usage examples",
+      "Experimental results summary",
+      "Key findings",
+      "Future work directions",
+      "Citation information",
+      "Links to paper versions",
+      "License and acknowledgments"
+    ],
+    "readme_features": {
+      "badges": ["License MIT", "Python 3.8+", "PyTorch 2.0+"],
+      "code_examples": true,
+      "performance_table": true,
+      "parameter_evolution": true,
+      "installation_guide": true,
+      "citation_bibtex": true
+    },
+    "readme_highlights": {
+      "title": "AutoGELU: Adaptive Gaussian Error Linear Units with Learnable Parameters",
+      "key_results": {
+        "final_accuracy": "61.93%",
+        "initial_accuracy": "25.22%",
+        "improvement": "2.46x",
+        "gradient_similarity": "99.83%",
+        "alpha_evolution": "1.0 → 0.7168",
+        "beta_evolution": "0.044715 → 0.5358"
+      }
+    },
+    "file_path": "README.md",
+    "file_size_bytes": 7168,
+    "note": "Manual execution completed successfully. MCP tools were not available, so GitHub upload was skipped. README provides comprehensive project documentation for the AutoGELU research."
+  }
+}
