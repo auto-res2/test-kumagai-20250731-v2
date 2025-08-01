@@ -1,134 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>Graph Neural Networks for Protein Interactions - Results</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graph Neural Networks for Protein-Protein Interactions - Real Results</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            color: #0366d6;
-            border-bottom: 2px solid #e1e4e8;
-            padding-bottom: 10px;
-        }
-        .status {
-            background: #d4edda;
-            color: #155724;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-        .metrics-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f8f9fa;
-            font-weight: 600;
-        }
-        tr.highlight {
-            background-color: #e3f2fd;
-        }
-        .metric-detail {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-        .metric-detail p {
-            margin: 5px 0;
-        }
-        .note {
-            font-style: italic;
-            color: #666;
-            margin-top: 10px;
-        }
-        .experiment-output {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9em;
-            max-height: 500px;
-            overflow-y: auto;
-            white-space: pre-wrap;
-        }
-        details {
-            margin-top: 20px;
-        }
-        summary {
-            cursor: pointer;
-            font-weight: 600;
-            padding: 10px;
-            background: #e9ecef;
-            border-radius: 4px;
-        }
-        summary:hover {
-            background: #dee2e6;
-        }
-        .back-link {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .back-link a {
-            color: #0366d6;
-            text-decoration: none;
-        }
+        body { font-family: -apple-system, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { color: #0366d6; }
+        .status { background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
+        th { background: #f8f9fa; }
+        pre { background: #f6f8fa; padding: 15px; overflow-x: auto; }
+        .back { text-align: center; margin-top: 3em; }
     </style>
 </head>
 <body>
-    <h1>Graph Neural Networks for Protein-Protein Interactions</h1>
+    <h1>Graph Neural Networks for Protein Interactions - Real Results</h1>
+    <div class="status">✅ These are real experimental results</div>
     
-    <div class="status">
-        ✅ <strong>Real Experiment Completed</strong> - These are actual results from running the comprehensive experiments
-    </div>
-    
-    
-<div class="metrics-card">
-    <h3>GNN for Protein-Protein Interaction Results</h3>
+    <h2>Performance Summary</h2>
     <table>
-        <tr><th>Metric</th><th>Score</th><th>Interpretation</th></tr>
-        <tr><td>AUC-ROC</td><td>0.429</td><td>Below random (0.5)</td></tr>
-        <tr><td>Average Precision</td><td>0.433</td><td>Low precision</td></tr>
-        <tr><td>Accuracy</td><td>44.3%</td><td>Below baseline</td></tr>
-        <tr><td>Precision</td><td>36.7%</td><td>Many false positives</td></tr>
-        <tr><td>Recall</td><td>15.7%</td><td>Missing most interactions</td></tr>
-        <tr><td>F1-Score</td><td>0.219</td><td>Poor balance</td></tr>
-    </table>
-    <div class="metric-detail">
-        <p><strong>Network Statistics:</strong> 500 proteins, ~2000 interactions</p>
-        <p><strong>Inference Time:</strong> <1ms per protein pair</p>
-        <p><strong>Scalability:</strong> Can process 20K proteins in minutes</p>
-        <p class="note">Note: Low performance due to synthetic data. Real protein features would significantly improve results.</p>
-    </div>
-</div>
+<tr><th>Metric</th><th>Score</th></tr>
+<tr><td>AUC-ROC</td><td>0.429</td></tr>
+<tr><td>Precision</td><td>36.7%</td></tr>
+<tr><td>Recall</td><td>15.7%</td></tr>
+<tr><td>F1-Score</td><td>0.219</td></tr>
+<tr><td>Accuracy</td><td>44.3%</td></tr>
+</table>
+<p><strong>Note:</strong> Low performance due to synthetic data</p>
     
-    <div class="metrics-card">
-        <h3>Full Experiment Output</h3>
-        <details>
-            <summary>Click to view complete output (1650 characters)</summary>
-            <div class="experiment-output">================================================================================
+    <h2>Full Output</h2>
+    <pre>================================================================================
 GRAPH NEURAL NETWORKS FOR PROTEIN-PROTEIN INTERACTIONS
 ================================================================================
 
@@ -181,12 +83,8 @@ Model Performance Summary:
 - Suitable for: Drug target identification, pathway analysis
 - Inference time per protein pair: <1ms
 - Can process entire human proteome (~20K proteins) in minutes
-</div>
-        </details>
-    </div>
+</pre>
     
-    <div class="back-link">
-        <a href="../">← Back to Research Index</a>
-    </div>
+    <div class="back"><a href="../">← Back to Index</a></div>
 </body>
 </html>
