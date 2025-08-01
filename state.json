@@ -1,92 +1,11 @@
 {
-  "github_repository": "auto-res2/test-kumagai-20250731-v2",
-  "branch_name": "test",
-  "experiment_iteration": 0,
-  "push_completion": {
-    "status": "completed",
-    "timestamp": "2025-07-31T13:39:29Z",
-    "commit_sha": "23bc94c"
-  },
-  "github_actions_execution": {
-    "workflow_run_id": 16650616038,
-    "status": "completed",
-    "started_at": "2025-07-31T13:39:29Z",
-    "completed_at": "2025-07-31T13:50:41Z",
-    "job_id": 47122051469,
-    "experiment_files": [
-      "src/experiments/autogelu_experiments.py",
-      "src/experiments/quick_test.py"
-    ],
-    "workflow_url": "https://github.com/auto-res2/test-kumagai-20250731-v2/actions/runs/16650616038",
-    "notes": "Experiments completed successfully. All 3 experiments ran in test mode with reduced epochs."
-  },
-  "executed_flag": true,
-  "execution_outputs": {
-    "experiment1_results": {
-      "final_accuracies": {
-        "ReLU": 42.82,
-        "GELU": 57.19,
-        "Swish": 52.44,
-        "AutoGELU": 25.22
-      },
-      "plot": "experiment1_activation_comparison.pdf"
-    },
-    "experiment2_results": {
-      "parameter_evolution": {
-        "alpha": {
-          "initial": 1.0,
-          "final": 0.7168,
-          "change": -0.2832
-        },
-        "beta": {
-          "initial": 0.0447,
-          "final": 0.5358,
-          "change": 0.4911
-        }
-      },
-      "final_accuracy": 61.93,
-      "plot": "experiment2_parameter_evolution.pdf"
-    },
-    "experiment3_results": {
-      "gradient_flow": {
-        "GELU_mean_grad_norm": 0.001197,
-        "AutoGELU_mean_grad_norm": 0.001195,
-        "ratio": 0.9983
-      },
-      "plot": "experiment3_gradient_flow.pdf"
-    },
-    "generated_files": [
-      "experiment1_activation_comparison.pdf",
-      "experiment2_parameter_evolution.pdf",
-      "experiment3_gradient_flow.pdf",
-      "quick_test_plot.pdf"
-    ]
-  },
-  "error_logs": [],
-  "analysis_results": {
-    "timestamp": "2025-07-31T14:15:00Z",
-    "key_findings": {
-      "experiment1": "AutoGELU underperformed (25.22%) vs GELU (57.19%) in initial comparison",
-      "experiment2": "AutoGELU improved dramatically from 40.03% to 61.93% with parameter adaptation",
-      "experiment3": "AutoGELU maintains 99.83% gradient flow similarity to GELU"
-    },
-    "strengths": [
-      "Adaptive learning capability",
-      "Gradient flow preservation in deep networks",
-      "Performance potential exceeding fixed activations with sufficient training"
-    ],
-    "limitations": [
-      "High sensitivity to initialization",
-      "Slower initial convergence",
-      "Additional computational overhead"
-    ],
-    "recommendations": [
-      "Investigate better initialization strategies",
-      "Implement adaptive learning rates for parameters",
-      "Test selective layer-wise application",
-      "Explore hybrid architectures"
-    ],
-    "conclusion": "AutoGELU shows promise as an adaptive activation function but requires careful initialization and extended training. The dramatic improvement in Experiment 2 (61.93% final accuracy) demonstrates significant potential when properly trained.",
-    "analysis_file": "analysis_report.md"
-  }
+  "github_repo_owner": "auto-res2",
+  "github_repo_name": "test-kumagai-20250731-v2",
+  "github_branch_name": "test-4",
+  "initial_query": "Graph neural networks for protein-protein interaction prediction",
+  "workflow_start_time": "2025-08-01T15:07:02.676381",
+  "skip_latex": true,
+  "experiment_code_created": true,
+  "experiment_file": "gnn_protein_experiments.py",
+  "workflow_status": "in_progress"
 }
