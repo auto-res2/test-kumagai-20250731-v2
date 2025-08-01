@@ -19,6 +19,13 @@
             border-bottom: 2px solid #e1e4e8;
             padding-bottom: 10px;
         }
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
         .metrics-card {
             background: white;
             padding: 20px;
@@ -40,6 +47,23 @@
             background-color: #f8f9fa;
             font-weight: 600;
         }
+        tr.highlight {
+            background-color: #e3f2fd;
+        }
+        .metric-detail {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .metric-detail p {
+            margin: 5px 0;
+        }
+        .note {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
         .experiment-output {
             background: #f8f9fa;
             padding: 15px;
@@ -50,12 +74,18 @@
             overflow-y: auto;
             white-space: pre-wrap;
         }
-        .status {
-            background: #d4edda;
-            color: #155724;
+        details {
+            margin-top: 20px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: 600;
             padding: 10px;
+            background: #e9ecef;
             border-radius: 4px;
-            margin: 20px 0;
+        }
+        summary:hover {
+            background: #dee2e6;
         }
         .back-link {
             margin-top: 30px;
@@ -75,12 +105,97 @@
     </div>
     
     
+<div class="metrics-card">
+    <h3>Quantum-Inspired Optimization Results</h3>
+    <table>
+        <tr><th>Optimizer</th><th>Final Accuracy</th><th>Final Loss</th><th>Training Time</th></tr>
+        <tr><td>SGD</td><td>10.5%</td><td>1.1416</td><td>45.64s</td></tr>
+        <tr><td>Adam</td><td>10.3%</td><td>1.7905</td><td>45.20s</td></tr>
+        <tr class="highlight"><td>QuantumInspired</td><td>9.8%</td><td>2.4239</td><td>52.82s</td></tr>
+    </table>
+    <div class="metric-detail">
+        <p><strong>Quantum Tunneling Events:</strong> 1,306</p>
+        <p><strong>Performance vs SGD:</strong> -6.7% accuracy</p>
+        <p><strong>Efficiency Score:</strong> -5.76</p>
+        <p class="note">Note: The quantum optimizer needs hyperparameter tuning. Current quantum noise (0.1) may be too high.</p>
+    </div>
+</div>
     
     <div class="metrics-card">
         <h3>Full Experiment Output</h3>
         <details>
-            <summary>Click to view complete output</summary>
-            <div class="experiment-output">No output available</div>
+            <summary>Click to view complete output (2540 characters)</summary>
+            <div class="experiment-output">================================================================================
+QUANTUM-INSPIRED NEURAL NETWORK OPTIMIZATION EXPERIMENT
+================================================================================
+
+Generating synthetic dataset...
+
+============================================================
+Training with SGD
+============================================================
+Epoch   0: Loss=2.3328, Train Acc=0.100, Test Acc=0.111, Time=2.68s
+Epoch   5: Loss=2.2871, Train Acc=0.170, Test Acc=0.100, Time=2.34s
+Epoch  10: Loss=1.6499, Train Acc=0.439, Test Acc=0.096, Time=2.33s
+Epoch  15: Loss=1.5912, Train Acc=0.449, Test Acc=0.110, Time=2.18s
+
+============================================================
+Training with Adam
+============================================================
+Epoch   0: Loss=2.3338, Train Acc=0.096, Test Acc=0.124, Time=2.27s
+Epoch   5: Loss=2.3246, Train Acc=0.111, Test Acc=0.110, Time=2.30s
+Epoch  10: Loss=2.2483, Train Acc=0.171, Test Acc=0.107, Time=2.24s
+Epoch  15: Loss=2.0058, Train Acc=0.284, Test Acc=0.094, Time=2.24s
+
+============================================================
+Training with QuantumInspired
+============================================================
+Epoch   0: Loss=2.4436, Train Acc=0.098, Test Acc=0.090, Time=2.68s
+Epoch   5: Loss=2.3940, Train Acc=0.099, Test Acc=0.101, Time=2.63s
+Epoch  10: Loss=2.3780, Train Acc=0.100, Test Acc=0.101, Time=2.66s
+Epoch  15: Loss=2.3879, Train Acc=0.097, Test Acc=0.105, Time=2.63s
+
+Quantum tunneling events: 1306
+
+================================================================================
+FINAL RESULTS COMPARISON
+================================================================================
+
+SGD:
+  Final Loss: 1.1416
+  Final Test Accuracy: 0.105
+  Total Training Time: 45.64s
+  Best Accuracy Epoch: 14
+
+Adam:
+  Final Loss: 1.7905
+  Final Test Accuracy: 0.103
+  Total Training Time: 45.20s
+  Best Accuracy Epoch: 7
+
+QuantumInspired:
+  Final Loss: 2.4239
+  Final Test Accuracy: 0.098
+  Total Training Time: 52.82s
+  Best Accuracy Epoch: 3
+  Quantum Tunneling Events: 1306
+
+================================================================================
+PERFORMANCE COMPARISON vs SGD
+================================================================================
+
+Adam:
+  Accuracy Improvement: -1.9%
+  Time Factor: 0.99x
+  Efficiency Score: -1.92
+
+QuantumInspired:
+  Accuracy Improvement: -6.7%
+  Time Factor: 1.16x
+  Efficiency Score: -5.76
+
+Results saved to quantum_optimization_comprehensive_results.pdf
+</div>
         </details>
     </div>
     
