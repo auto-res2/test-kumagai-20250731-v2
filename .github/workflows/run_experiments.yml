@@ -2,7 +2,9 @@ name: Run Experiments
 
 on:
   push:
-    branches: [ test, test-2, test-3, test-4 ]
+    branches: [ main, test, test-2, test-3, test-4 ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -20,63 +22,39 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install torch torchvision numpy matplotlib scikit-learn
     
     - name: Create results directory
       run: mkdir -p results
     
-    - name: Run quick test
-      run: |
-        cd src/experiments
-        python quick_test.py || echo "Quick test not found, skipping"
-    
-    - name: Run experiments
+    - name: Run federated_learning_experiments.py
       timeout-minutes: 15
       run: |
         cd src/experiments
-        # Find and run the main experiment file
-        if [ -f "autogelu_experiments.py" ]; then
-          echo "Running AutoGELU experiments..."
-          python autogelu_experiments.py > ../../results/experiment_output.txt 2>&1
-        elif [ -f "quantum_optimization_experiments.py" ]; then
-          echo "Running Quantum optimization experiments..."
-          python quantum_optimization_experiments.py > ../../results/experiment_output.txt 2>&1
-        elif [ -f "federated_learning_experiments.py" ]; then
-          echo "Running Federated learning experiments..."
-          python federated_learning_experiments.py > ../../results/experiment_output.txt 2>&1
-        elif [ -f "gnn_protein_experiments.py" ]; then
-          echo "Running GNN protein experiments..."
-          python gnn_protein_experiments.py > ../../results/experiment_output.txt 2>&1
-        else
-          echo "No experiment file found, running any Python file..."
-          python *.py > ../../results/experiment_output.txt 2>&1
-        fi
+        echo "Running federated_learning_experiments.py for branch test-3..."
+        python federated_learning_experiments.py > ../../results/experiment_output.txt 2>&1
+        echo "Experiment completed"
+        
+        # Also save a summary
+        echo "Branch: test-3" > ../../results/experiment_summary.txt
+        echo "Experiment: federated_learning_experiments.py" >> ../../results/experiment_summary.txt
+        echo "Timestamp: $(date)" >> ../../results/experiment_summary.txt
+        echo "" >> ../../results/experiment_summary.txt
+        tail -50 ../../results/experiment_output.txt >> ../../results/experiment_summary.txt
     
-    - name: List generated files
-      run: |
-        echo "=== Generated files ==="
-        ls -la src/experiments/*.pdf || echo "No PDF files generated"
-        echo "=== Results directory ==="
-        ls -la results/
-    
-    - name: Upload experiment results
-      uses: actions/upload-artifact@v4
+    - name: Upload results
+      uses: actions/upload-artifact@v3
       with:
-        name: experiment-results
+        name: experiment-results-test-3
         path: |
-          src/experiments/*.pdf
-          results/experiment_output.txt
-      if: always()
+          results/
+          src/
     
-    - name: Upload experiment plots
-      uses: actions/upload-artifact@v4
+    - name: Upload plots
+      uses: actions/upload-artifact@v3
+      if: always()
       with:
-        name: experiment-plots
-        path: src/experiments/*.pdf
-      if: always()
-    
-    - name: Display experiment output
-      run: |
-        echo "=== Experiment Output ==="
-        cat results/experiment_output.txt || echo "No output file found"
-      if: always()
+        name: experiment-plots-test-3
+        path: |
+          *.pdf
+          *.png
