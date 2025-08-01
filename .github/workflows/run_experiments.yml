@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
     
@@ -31,30 +31,38 @@ jobs:
       timeout-minutes: 15
       run: |
         cd src/experiments
-        echo "Running federated_learning_experiments.py for branch test-3..."
-        python federated_learning_experiments.py > ../../results/experiment_output.txt 2>&1
-        echo "Experiment completed"
+        echo "=== Running federated_learning_experiments.py for branch test-3 ==="
+        python federated_learning_experiments.py 2>&1 | tee ../../results/experiment_output.txt
         
-        # Also save a summary
-        echo "Branch: test-3" > ../../results/experiment_summary.txt
-        echo "Experiment: federated_learning_experiments.py" >> ../../results/experiment_summary.txt
-        echo "Timestamp: $(date)" >> ../../results/experiment_summary.txt
-        echo "" >> ../../results/experiment_summary.txt
-        tail -50 ../../results/experiment_output.txt >> ../../results/experiment_summary.txt
+        # Create summary
+        echo "=== EXPERIMENT SUMMARY ===" > ../../results/summary.txt
+        echo "Branch: test-3" >> ../../results/summary.txt
+        echo "Experiment: federated_learning_experiments.py" >> ../../results/summary.txt
+        echo "Timestamp: $(date)" >> ../../results/summary.txt
+        echo "" >> ../../results/summary.txt
+        echo "=== Last 100 lines of output ===" >> ../../results/summary.txt
+        tail -100 ../../results/experiment_output.txt >> ../../results/summary.txt
+    
+    - name: List results
+      if: always()
+      run: |
+        echo "Contents of results directory:"
+        ls -la results/
+        echo ""
+        echo "Contents of current directory:"
+        ls -la
+        echo ""
+        if [ -f results/summary.txt ]; then
+          echo "Summary contents:"
+          cat results/summary.txt
+        fi
     
     - name: Upload results
-      uses: actions/upload-artifact@v3
-      with:
-        name: experiment-results-test-3
-        path: |
-          results/
-          src/
-    
-    - name: Upload plots
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: experiment-plots-test-3
+        name: results-test-3-${{ github.run_id }}
         path: |
+          results/
           *.pdf
           *.png
