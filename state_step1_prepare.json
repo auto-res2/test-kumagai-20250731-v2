@@ -1,0 +1,8 @@
+{
+  "subgraph_name": "PrepareRepositorySubgraph",
+  "github_repository": "auto-res2/test-kumagai-20250731-v2",
+  "branch_name": "test-2",
+  "base_queries": [
+    "Quantum-inspired algorithms for neural network optimization"
+  ]
+}

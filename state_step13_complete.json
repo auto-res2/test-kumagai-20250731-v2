@@ -1,0 +1,55 @@
+{
+  "step_13_latex_subgraph": {
+    "status": "completed",
+    "timestamp": "2025-07-31T22:30:00Z",
+    "latex_files_generated": {
+      "paper.tex": "Simple LaTeX version with basic styling",
+      "paper_iclr.tex": "Professional ICLR conference format version",
+      "neurips_2023.sty": "Basic NeurIPS style file",
+      "iclr2024_conference.sty": "ICLR 2024 conference style",
+      "natbib.sty": "Bibliography style support",
+      "fancyhdr.sty": "Header/footer styling",
+      "iclr2024_conference.bst": "ICLR bibliography style",
+      "references.bib": "BibTeX references file"
+    },
+    "images_included": [
+      "experiment1_activation_comparison.pdf",
+      "experiment2_parameter_evolution.pdf", 
+      "experiment3_gradient_flow.pdf",
+      "quick_test_plot.pdf"
+    ],
+    "latex_content_summary": {
+      "title": "AutoGELU: Adaptive Gaussian Error Linear Units with Learnable Parameters for Enhanced Neural Network Performance",
+      "sections": [
+        "Abstract",
+        "Introduction",
+        "Related Work",
+        "Background",
+        "Method",
+        "Experimental Setup",
+        "Results",
+        "Discussion",
+        "Conclusion",
+        "Acknowledgments",
+        "References"
+      ],
+      "total_pages_estimate": 10,
+      "figures": 3,
+      "equations": 3,
+      "references": 4
+    },
+    "compilation_instructions": {
+      "simple_version": "cd latex_output && pdflatex paper.tex",
+      "iclr_version": [
+        "cd latex_output",
+        "pdflatex paper_iclr.tex",
+        "bibtex paper_iclr",
+        "pdflatex paper_iclr.tex",
+        "pdflatex paper_iclr.tex"
+      ]
+    },
+    "output_directory": "latex_output",
+    "github_workflow_dispatch": false,
+    "note": "Manual execution completed successfully. MCP tools were not available, so GitHub integration was skipped."
+  }
+}

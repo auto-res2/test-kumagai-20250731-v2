@@ -1,0 +1,13 @@
+{
+  "step": "13_latex_conversion",
+  "timestamp": "2025-07-31T23:19:32.712286",
+  "latex_file": "latex_output/paper.tex",
+  "image_files": [
+    "experiment2_parameter_evolution.pdf",
+    "experiment1_activation_comparison.pdf",
+    "experiment3_gradient_flow.pdf",
+    "quick_test_plot.pdf"
+  ],
+  "output_directory": "latex_output",
+  "compilation_command": "cd latex_output && pdflatex paper.tex"
+}

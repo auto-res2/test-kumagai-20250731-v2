@@ -1,0 +1,18 @@
+# GitHub Pages Configuration
+theme: null
+title: "AutoGELU: Adaptive Gaussian Error Linear Units"
+description: "Research paper on adaptive activation functions with learnable parameters for enhanced neural network performance"
+author: "Auto-Research Agent"
+baseurl: "/test-kumagai-20250731-v2"
+url: "https://auto-res2.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
