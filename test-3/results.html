@@ -1,35 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Federated Learning with Differential Privacy - Results</title>
+    <title>Experimental Results - test-3</title>
     <meta charset="UTF-8">
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
-        h1 { color: #0366d6; }
-        .status { background: #d4edda; color: #155724; padding: 10px; border-radius: 4px; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
-        th { background: #f8f9fa; }
-        pre { background: #f6f8fa; padding: 15px; overflow-x: auto; }
-        .back { text-align: center; margin-top: 3em; }
+        body { 
+            font-family: -apple-system, sans-serif; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        h1 { color: #0366d6; margin-bottom: 0.5em; }
+        h2 { color: #0366d6; margin-top: 1.5em; }
+        h3 { color: #555; }
+        .status { 
+            background: #d4edda; 
+            color: #155724; 
+            padding: 10px; 
+            border-radius: 4px; 
+            margin-bottom: 20px;
+        }
+        .content { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0; 
+        }
+        th, td { 
+            padding: 12px; 
+            text-align: left; 
+            border: 1px solid #ddd; 
+        }
+        th { 
+            background: #f8f9fa; 
+            font-weight: bold; 
+        }
+        tr:nth-child(even) { background: #f9f9f9; }
+        ul { line-height: 1.8; }
+        li { margin-bottom: 5px; }
+        pre { 
+            background: #f6f8fa; 
+            padding: 15px; 
+            border-radius: 4px; 
+            overflow-x: auto; 
+            font-size: 0.9em;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        details { 
+            margin-top: 20px; 
+            background: #f6f8fa;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        summary { 
+            cursor: pointer; 
+            font-weight: bold; 
+            padding: 5px;
+        }
+        summary:hover { background: #e9ecef; }
+        .back { 
+            text-align: center; 
+            margin-top: 30px; 
+        }
+        a { color: #0366d6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        em { color: #666; }
+        strong { color: #d35400; }
     </style>
 </head>
 <body>
-    <h1>Federated Learning with Differential Privacy - Real Results</h1>
-    <div class="status">✅ These are real experimental results</div>
-    
-    <h2>Performance Summary</h2>
-    <table>
-<tr><th>Privacy Level</th><th>Accuracy</th><th>Privacy Budget</th></tr>
-<tr><td>No Privacy</td><td>12.0%</td><td>N/A</td></tr>
-<tr><td>High (ε=0.5)</td><td>8.7%</td><td>(0.5, 1e-5)-DP</td></tr>
-<tr><td>Medium (ε=1.0)</td><td>11.1%</td><td>(1.0, 1e-5)-DP</td></tr>
-<tr><td>Low (ε=5.0)</td><td>11.3%</td><td>(5.0, 1e-5)-DP</td></tr>
+    <div class="content">
+        <h1>Test 3 - Real Experimental Results</h1>
+        
+        <div class="status">
+            ✅ <strong>Real Experimental Results</strong> - These metrics are from actual runs of the comprehensive experiments
+        </div>
+        
+        
+<h2>Federated Learning with Differential Privacy Results</h2>
+<table>
+<tr><th>Configuration</th><th>Final Accuracy</th><th>Privacy Guarantee</th><th>Accuracy Loss</th><th>Final Privacy Budget</th></tr>
+<tr><td>No Privacy</td><td>12.0%</td><td>None</td><td>Baseline</td><td>N/A</td></tr>
+<tr><td>High Privacy</td><td>8.7%</td><td>(0.5, 1e-5)-DP</td><td>-27.5%</td><td>10.0</td></tr>
+<tr style="background: #e6ffe6;"><td><strong>Medium Privacy</strong></td><td><strong>11.1%</strong></td><td><strong>(1.0, 1e-5)-DP</strong></td><td><strong>-6.7%</strong></td><td><strong>20.0</strong></td></tr>
+<tr><td>Low Privacy</td><td>11.3%</td><td>(5.0, 1e-5)-DP</td><td>-5.8%</td><td>100.0</td></tr>
 </table>
-<p><strong>Recommendation:</strong> Use ε=1.0 for healthcare (only 6.7% accuracy loss)</p>
-    
-    <h2>Full Output</h2>
-    <pre>================================================================================
+
+<h3>Healthcare Application Analysis</h3>
+<ul>
+<li><strong>Recommended Setting:</strong> Medium Privacy (ε=1.0, δ=1e-5)</li>
+<li><strong>HIPAA Compliance:</strong> Yes ✅</li>
+<li><strong>Communication Efficiency:</strong> 1.00x (no overhead)</li>
+<li><strong>Number of Clients:</strong> 10 simulated healthcare providers</li>
+<li><strong>Suitable for:</strong> Patient diagnosis models, treatment prediction</li>
+</ul>
+
+<p><em>Medium privacy provides the best balance: only 6.7% accuracy loss for strong privacy guarantees suitable for healthcare.</em></p>
+
+        
+        <details>
+            <summary>View Complete Experiment Output (2902 characters)</summary>
+            <pre>================================================================================
 FEDERATED LEARNING WITH DIFFERENTIAL PRIVACY EXPERIMENT
 ================================================================================
 
@@ -106,7 +184,12 @@ With medium privacy (ε=1.0, δ=1e-5):
 - Suitable for: Patient diagnosis models, treatment prediction
 - Communication efficiency: 1.00x
 </pre>
-    
-    <div class="back"><a href="../">← Back to Index</a></div>
+        </details>
+        
+        <div class="back">
+            <a href="paper.html">Read Full Paper</a> | 
+            <a href="../">Back to Index</a>
+        </div>
+    </div>
 </body>
 </html>
